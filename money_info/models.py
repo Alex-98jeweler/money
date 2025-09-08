@@ -3,7 +3,7 @@ from django.db import models
 
 class Status(models.Model):
     
-    name = models.CharField(max_length=32)
+    name = models.CharField(max_length=32, unique=True)
     
     class Meta:
         verbose_name_plural = 'Statuses'
@@ -13,7 +13,7 @@ class Status(models.Model):
 
 
 class Type(models.Model):
-    name = models.CharField(max_length=32)
+    name = models.CharField(max_length=32, unique=True)
     
     def __str__(self):
         return self.name
@@ -21,7 +21,7 @@ class Type(models.Model):
 
 class Category(models.Model):
     
-    name = models.CharField(max_length=32)
+    name = models.CharField(max_length=32, unique=True)
     type = models.ForeignKey(Type, on_delete=models.PROTECT)
     
     class Meta:
@@ -34,7 +34,7 @@ class Category(models.Model):
 
 class SubCategory(models.Model):
     
-    name = models.CharField(max_length=64)
+    name = models.CharField(max_length=64, unique=True)
     category = models.ForeignKey(Category, models.PROTECT)
     
     class Meta:
