@@ -20,3 +20,18 @@ class MoneyMovementsCreateListView(generics.ListCreateAPIView):
         else:
             queryset = models.MoneyMovement.objects.all()
         return queryset
+    
+
+class MoneyMoveRetrieveUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
+    
+    serializer_class = serializers.MoneyMovementsSerializer
+    http_method_names = ['get', 'put', 'delete']
+    
+    def get(self, request, *args, **kwargs):
+        return super().get(request, *args, **kwargs)
+    
+    
+    def get_queryset(self):
+        pk = self.kwargs.get('pk')
+        return models.MoneyMovement.objects.filter(pk=pk)
+
