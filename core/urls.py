@@ -21,7 +21,8 @@ from . import swagger
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/', include('money_info.urls'))
+    path('api/v1/', include('money_info.urls')),
+    path('api/v1/', include('money_movements.urls'))
     
 ]
 

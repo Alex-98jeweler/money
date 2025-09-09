@@ -133,4 +133,9 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-DATETIME_FORMAT = '%Y-%m-%d %H:%M:%S'
+# DATETIME_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
