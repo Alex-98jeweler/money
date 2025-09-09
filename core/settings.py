@@ -45,9 +45,11 @@ INSTALLED_APPS = [
     
     'rest_framework',
     'drf_yasg',
+    'django_filters',
     
     'money_info',
-    'money_movements'
+    'money_movements', 
+    
 ]
 
 MIDDLEWARE = [
