@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_yasg',
     
-    'money_info'
+    'money_info',
+    'money_movements'
 ]
 
 MIDDLEWARE = [
