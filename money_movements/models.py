@@ -10,3 +10,6 @@ class MoneyMovement(models.Model):
     category = models.ForeignKey('money_info.Category', models.CASCADE)
     subcategory = models.ForeignKey('money_info.SubCategory', models.CASCADE)
     comment = models.TextField(max_length=1024)
+    
+    def __str__(self):
+        return f'{self.date_time} | {self.type}'
