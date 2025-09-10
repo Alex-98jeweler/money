@@ -16,10 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic.base import RedirectView
+from django.urls import reverse_lazy
 
 from . import swagger
 
 urlpatterns = [
+    path('', RedirectView.as_view(url=reverse_lazy('admin:index')), name='home'),
     path('admin/', admin.site.urls),
     path('api/v1/', include('money_info.urls')),
     path('api/v1/', include('money_movements.urls'))

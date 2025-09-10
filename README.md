@@ -65,8 +65,7 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-After setup, you can open http://127.0.0.1:8000/ for login in django admin site. On this site you can 
-edit entities of this project.
+After setup, you can open http://127.0.0.1:8000/ for login in django admin site. You need to login by credentials from createsuper user step. After login you can make CRUD operations with project entities
 
 
 ## Documentation
